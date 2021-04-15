@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>This is from the todo.html template</h1>
+
+<p>{{ todo.name }}</p>
+<ol>
+    {% for item in items %}
+
+    {% if forloop.counter == 1 %} 
+    <li>This is item 1</li>
+    {% elif forloop.counter == 2 %} 
+    <li>This is item 2</li>
+    {% else %}
+    <li> {{ forloop.counter|add:-1 }} - {{ item.text }}</li>
+    {% endif %}
+
+    {% endfor %}
+</ol>
+
+{% endblock %}
+
